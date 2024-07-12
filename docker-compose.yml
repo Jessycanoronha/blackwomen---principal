@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  women:
+    build: .
+    environment:
+      FLASK_ENV: development
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/blackwomanhistory
+    ports:
+      - "8000:8000"
+    networks:
+      - shared_network
+
+networks:
+  shared_network:
+    external: true
